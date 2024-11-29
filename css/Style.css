@@ -1,0 +1,460 @@
+/*
+    Estilo común a toda la pagina, en la que se modifica la tipografia, el color de fondo 
+    y el color de letra
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7fa;
+    color: #333;
+}
+
+/* 
+    Estilo al encabezado con la posición relativa para que el texto esté encima de la imagen de fondo
+    y overflow para que el contenido no se desborde.
+*/
+header {
+    position: relative;
+    overflow: hidden; 
+}
+
+/* 
+    Estilo aplicados a la imagen del header
+    con el width ocupa el 100% del ancho de la página
+    con height: la altura de la imagen será siempre la mitad de la ventana del navegador
+    object fit: cover mantiene la proporción de la imagen
+    display block elimina un pequeño espacio que habia en la parte inferior
+    opacity añade transparencia a la imagen para un estilo mas sutil y delicado
+*/
+header img {
+    width: 100%;
+    height: 25em; 
+    object-fit: cover;
+    display: block;
+    opacity: 0.8;
+}
+
+/* 
+    Aplica el estilo al contenedor del titulo de la imagen 
+    position, posiciona el texto sobre la imagen
+    el top y left, centran el texto horizontal y verticalmente
+    se aplica el color blanco de texto
+    se alinea al centro
+    y se añade z-index:2, para que este encima de la imagen y del gradiente
+    y este no se vea afectado por el zono verde aplicado a la imagen.
+*/
+header .contenido {
+    position: absolute; 
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: white; 
+    text-align: center; 
+    z-index: 2; 
+}
+
+/* 
+    Añade el estilo al titulo principal, para que sea mas grande y
+    se cambia la tipografía a "Roboto"
+    y se añade sombra para mejorar la legibilidad del texto
+*/
+header h1 {
+    font-size: 4em; 
+    font-family:Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
+}
+
+a {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Hereda el color del texto del padre */
+}
+
+/* 
+    Añade estilo al h2, 
+    se ajusta el tamaño para que sea mas pequeño que el titulo
+    y se añade sombra negra para aumentar la legibilidad del texto
+    la tipografia es la misma que en el h1 "Roboto".
+*/
+header h2 {
+    font-size: 1.75em; 
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+}
+
+
+/* 
+Añade el estilo a la barra de navegación
+añade color de fondo para resaltar las categorías 
+el width hace que ocupe el 100% de la página
+añadimos con box-shadow una paqueña sombra
+*/
+nav {
+    background-color: #1b5456;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+/* 
+    Aplica el estilo en linea para los elementos de la lista 
+*/
+nav ul li {
+    display: inline-block;
+}
+
+/* 
+    Estilos para los enlaces de la barra de navegación 
+    text decoration elimina el subrayado de los enlaces
+    se cambia el colore la letra de los botones a blanco
+    se ajusta un tamaño de letra
+    y el tamaño del botón con el padding
+    se redondea el borde con el border-radius
+
+*/
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5em;
+    padding: 30px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* 
+    Estilo plicado a la imagen del logo del menú
+    para ajustar su tamaño (ancho y alto)
+    redondear los angulos del botón con border-radius
+    y el vertical-align alinea el elemento con el resto
+*/
+nav ul li a img {
+    width: 2.5em;
+    height: auto;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+/* 
+    Estilo aplicado al hover, para que cambie al pasar el cursor por encima
+    se cambia el color del botón a un tono algo mas claro.
+*/
+nav ul li a:hover {
+    background-color: #00796b;
+    color: #ffffff;
+}
+
+/* 
+    ESTILOS DEL CONTENEDOR PRINCIPAL DEL BLOG:
+*/
+
+.contenedor-principal {
+    max-width: 100%; 
+    margin: 5em; 
+}
+
+/* Se añade estilo a los artículos, 
+    poniendo un espacio, borde, border-radius para redondear,
+   aplicar una sombra y el overflow para que el contenido se desborde */
+.articulo {
+    margin-bottom: 40px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+}
+
+/* Estilo para los artículos con la imagen a la izquierda */
+.articulo-izquierda .imagen {
+    float: left; 
+    margin-right: 20px; 
+}
+
+/* Estilo para los artículos con la imagen a la derecha */
+.articulo-derecha .imagen {
+    float: right; 
+    margin-left: 20px; 
+}
+
+.contenido {
+    padding: 20px; 
+    overflow: hidden; 
+}
+
+.imagen {
+    width: 300px; 
+}
+
+.imagen img {
+    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Estilos para los botones de "Leer más" */
+.leer-mas {
+    display: inline-block; 
+    margin-top: 10px; 
+    padding: 10px 15px; 
+    background-color: #00796b; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 15px; 
+}
+
+.leer-mas:hover {
+    background-color: #005f4f; /* Color más oscuro al pasar el ratón */
+}
+
+
+/* Estilo del contenedor de la tabla
+con un margen, padding, un ancho máximo, border-radius y sombra aplicada */
+#tabla {
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 900px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+/*Aplicamos sombra cuando se pasa el ratón*/
+#tabla:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+}
+
+/* Se aplica el estilo al header de la tabla */
+#tabla h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #00796b;
+    margin-bottom: 30px;
+    font-family:Arial, Helvetica, sans-serif; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#tabla table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color:#95A7A7;
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+#tabla th {
+    background-color: #004d40;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 3px solid #00796b; 
+}
+
+/* Estilos apolicados a las celdas */
+#tabla td {
+    padding: 18px;
+    text-align: left;
+    font-size: 1.1em;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+/* Aplicamos colores de fondo diferentes para filas pares e impares*/
+#tabla tr:nth-child(even) {
+    background-color: #f5f7fa; 
+}
+
+#tabla tr:nth-child(odd) {
+    background-color: #f9f9f9; 
+}
+
+/* Añadir un efecto de sombra suave al pasar por encima de las celdas */
+#tabla td:hover {
+    background-color: #f5f7fa; /* Color suave verde */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil en las celdas */
+}
+
+/*Estilos aplicados a la pantalla de "grid.html"*/
+/*Aplicamos estilo para el h2 del grid de cards, aplicando tipografía, color de fondo, margen y padding*/
+h2 {
+    padding: 1em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+/*Para que se mueve verticalmente 5 px*/
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Aplicamos estilos a todas las imagenes */
+.card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+}
+
+/*Aplicamos estilo al titulo del contenedor de la imagen*/
+.titulo-contenedor {
+    font-size: 1.25em;
+    margin: 16px 0;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*Para que el link de las cards no tenga decoracion y cambie de color a verde*/
+.titulo-contenedor:hover {
+    text-decoration: none;
+    color:#00796b; 
+}
+
+.texto-contenedor {
+    font-size: 0.9em;
+    color: #555;
+    padding: 0 16px 16px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+/* AQUI EMPIEZA EL ESTILO PARA LA PAGINA DE FORMULARIO */
+
+/* Estilos para el contenedor principal 
+margin auto para centrar el texto en horizontal
+y usando overflow auto */
+
+#form-contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 20px;
+    overflow: auto; 
+}
+
+/* Estilos para el formulario
+cone el ancho, el colo de fondo, el border radius, una sombra, padding
+y el display para la alineación de los dos elementos en bloque
+float: left para que el formulario se quede en la zona izquierda de la página */
+.formulario {
+    width: 60%; 
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    display: inline-block; 
+    float: left; 
+}
+
+/* Estilos para los campos del formulario 
+y el espacio entre los mismos (de 15px)*/
+.campo {
+    margin-bottom: 15px; 
+}
+/*Aplicamos estilo a los campos para que ocupen el ancho del espacio
+aplicamos un margen inferior y ponemos el texto en negrita*/
+
+label {
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    font-size: 16px;
+    box-sizing: border-box; 
+}
+
+/* Aplicamos estilo del botón de enviar */
+.boton-contenedor {
+    text-align: right; 
+}
+
+/*Estilo aplicado al botón y al hover del botón*/
+button {
+    padding: 10px 15px; 
+    background-color: #00796b; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005f4f;
+}
+
+/* Estilos para la imagen para ubicarla a la derecha del formulario
+   con un ancho específico y un display inline-block para su alineamiento con el formulario */
+    .imagen {
+    width: 35%;
+    height: auto;
+    display: inline-block;
+    text-align: right;
+    padding-left: 10px;
+}
+
+
+
+
+/* En la seccion de footer se aplica un colorde fondo con una tipografía blanca
+el texto alineado al centro y un padding para darle margen
+se creó una lista sin estilo para los elementos y se usó el display para colocarlos en linea y darles un tamaño específico
+se hizo un hover para que al pasar el cursor los elementos se muevan verticalmente.
+*/
+footer {
+    background-color: #00796b; 
+    color: white; 
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+footer ul {
+    list-style-type: none; 
+    padding: 0;
+    margin-top: 10px;
+}
+
+footer ul li {
+    display: inline; 
+    margin: 0 10px;
+}
+
+footer ul li a img {
+    width: 32px; 
+    height: auto;
+}
+
+footer ul li a img:hover {
+    transform: scale(1.2); 
+}
